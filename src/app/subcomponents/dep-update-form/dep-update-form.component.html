@@ -1,0 +1,31 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #departamentoUpdForm="ngForm">
+        <div class="form-group">
+
+          <label for="nombre">Id</label>
+
+          <input type="text" [(ngModel)]="departamento.depId" 
+            class="form-control"
+            id="id"
+            name="id" 
+            [readonly]="true">
+
+            <br/>
+
+          <label for="nombre">Nombre</label>
+
+          <input type="text" [(ngModel)]="departamento.nombre" 
+            class="form-control"
+            id="nombreNew"
+            name="nombreNew"
+            required #nombreNew="ngModel">
+ 
+        </div>
+        <div [hidden]="!nombreNew.pristine" class="alert alert-danger">nombre is required</div>
+        <div class="form-group">
+        </div>
+        <button type="submit" class="btn btn-info">Actualizar</button>
+      </form>
+    </div>
+  </div>

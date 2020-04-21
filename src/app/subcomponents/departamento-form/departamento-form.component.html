@@ -1,0 +1,22 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #departamentoForm="ngForm">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+
+          <input type="text" [(ngModel)]="departamento.nombre" 
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            placeholder="Enter name"
+            required #nombre="ngModel">
+
+        </div>
+        <div [hidden]="!nombre.pristine" class="alert alert-danger">nombre is required</div>
+        <div class="form-group">
+        </div>
+        <button type="submit" [disabled]="!departamentoForm.form.valid" 
+          class="btn btn-info">Agregar</button>
+      </form>
+    </div>
+  </div>

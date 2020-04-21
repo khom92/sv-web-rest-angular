@@ -1,0 +1,23 @@
+ <div class="card my-5">
+     <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dep of departamentos">
+            <td>{{ dep.depId }}</td>
+            <td>{{ dep.nombre }}</td>
+            <td>
+              <button (click)="UpdateLsComponent(dep);" class="btn btn-success  ">Update</button>     
+              <button (click)="DeleteLsComponent(dep);" class="btn btn-danger  ">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
